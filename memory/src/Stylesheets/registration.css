@@ -1,0 +1,22 @@
+@import url('../Components/common/common.styles.css');
+
+*,
+*::before,
+*::after {
+    margin: var(--root-margin);
+    padding: var(--root-padding);
+    box-sizing: inherit;
+}
+
+.container {
+    box-sizing: var(--root-box-sizing);
+    line-height: 1.7;
+    height: 100vh;
+    background: radial-gradient(closest-side at 50% 50%, var(--base-color-darkblue), var(--base-color-lightblue));   
+}
+
+.container .container__navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+}
