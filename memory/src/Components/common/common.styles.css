@@ -1,11 +1,12 @@
 :root {
-    --base-color-lightblue: #7CD5ED;
+    --base-color-lightblue: #8EBAEE;
     --base-color-darkblue: #286DA4;
     --base-color-red: #D41A0B;
     --base-color-lightgreen: #05B169;
     --base-color-gold: #F48236;
     --root-margin: 0;
     --root-padding: 0;
-    --root-box-sizing: border-box
+    --root-box-sizing: border-box;
+    --root-font-size: 16px
 }
 
