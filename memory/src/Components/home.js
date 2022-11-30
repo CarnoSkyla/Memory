@@ -8,6 +8,8 @@ import '../Stylesheets/home.css'
 
 const HomeScreen = () => {
 
+    let players = useSelector((state) => state.user);
+    console.log(players);
     const [playerTurn, setPlayerTurn] = useState("player1");
 
     return (

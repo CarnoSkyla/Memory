@@ -8,21 +8,14 @@ const initialState = {
 const PlayerReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_PLAYER":
+            let updated = state.players.push({...action.payload})
             return {
                 ...state,
-                players: action.payload,
+                ...updated,
                 success: true
             }
         case 'DELETE_PLAYER':
-            let checkIfPlayerExist = state.user.filter((player) => {
-                return player === action.payload
-            })
-            if (checkIfPlayerExist) {
-                console.log(checkIfPlayerExist)
-            }
-            return {
-                ...state
-            };
+            return state
         default:
             return state;
     }

@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector, } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import '../Stylesheets/registration.css'
 import Astro1 from '../Images/astro1.png'
 import Astro2 from '../Images/astro2.png'
 import { addPlayer } from '../Redux/Actions/userAction';
-import { getStore } from '../Redux/Reducers/storeRegistry';
+import { Link, useNavigate} from 'react-router-dom'; 
 
 const RegistrationScreen = () => {
-
+    let navigate = useNavigate();
     const { players, success } = useSelector((state) => state.user);
     const [signedIn, setSignedIn] = useState(false)
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        if (success) {
-            alert(players.player1 + ' VS ' + players.player2)
-
+        console.log(players, success);
+        if (success && signedIn) {
+            if (players.length > 0) {
+                alert(players[0].player1 + ' VS ' + players[0].player2)
+            }
             setTimeout(() => {
-                window.location.href = 'HomeScreen'
+                navigate('/Home')
             }, 1500); 
         }
-    }, [signedIn, players.length])
+    }, [signedIn, players])
 
     const getUserValues = () => {
         const player1 = document.getElementById('player-1').value;
@@ -27,7 +30,7 @@ const RegistrationScreen = () => {
 
         const players = validatePlayerDetails(player1, player2)
 
-        getStore().dispatch(addPlayer(players))
+        dispatch(addPlayer(players))
         setSignedIn(true)
     }
 
@@ -75,7 +78,7 @@ const RegistrationScreen = () => {
                     <input type='text' id='player-2' placeholder="Player 2" />
                 </div>
                 <div className='container__submit'>
-                    <button type='button' className="btn" onClick={getUserValues}> Let's Play</button>
+                    <button type='button' className="btn" onClick={getUserValues}>Lets Play</button>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux'
 
 import './App.css';
@@ -7,28 +7,19 @@ import './App.css';
 import Registration from './Components/registration';
 import HomeScreen from './Components/home';
 import WinnerScreen from './Components/winner';
-import configureStore from './Redux/store';
+import store from './Redux/store';
 import { setStore } from './Redux/Reducers/storeRegistry';
-
-const store = configureStore();
-
-setStore(store);
 
 function App() {
   return (
     <Provider store={store}>
-      {
-        window.document.location.href === 'http://localhost:3000/HomeScreen' && 
-        <HomeScreen />
-      }
-      {
-        window.document.location.href === 'http://localhost:3000/WinnerScreen' && 
-        <WinnerScreen />
-      }
-      {
-        window.document.location.href === 'http://localhost:3000/' && 
-        <Registration />
-      }
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Registration />} />
+          <Route path='/Home' element={<HomeScreen />} />
+          <Route path='/Winner' element={<WinnerScreen />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   );  
 }
