@@ -37,10 +37,6 @@
     backface-visibility: hidden;
 }
 
-.container__game--grid:hover {
-    transform: rotateY(180deg);
-}
-
 .container__game--grid-sub-back {
     position: absolute;
     top: 0;
@@ -49,7 +45,8 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    background-color: blue;
+    background: url('../Images//ace\(diamond\).jpeg');
+    background-size: cover;
     color: black;
     transform: rotateY(180deg);
 }
