@@ -12,10 +12,8 @@ const RegistrationScreen = () => {
     const [signedIn, setSignedIn] = useState(false)
 
     useEffect(() => {
-        console.log(players, success);
         if (success) {
-
-            alert(players[0].player1 + ' VS ' + players[0].player2)
+            alert(players.player1 + ' VS ' + players.player2)
 
             setTimeout(() => {
                 window.location.href = 'HomeScreen'

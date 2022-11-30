@@ -47,8 +47,12 @@
     border-radius: 1rem;
     border: 0;
 }
+.container__navigation--exit-btn-wrapper .restart-btn {
+    background-color: var(--base-color-gold);
+}
 .container__navigation--exit-btn-wrapper button {
     background-color: var(--base-color-red);
+    margin-left: 1rem;
 }
 
 /** 
@@ -73,9 +77,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.container__images-input-wrapper {
- 
-}
+
 .container__input input {
     padding: 1rem;
     border-radius: 1rem;

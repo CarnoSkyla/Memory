@@ -1,0 +1,61 @@
+.container__main-game--content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+    color: #ffffff;
+}
+
+.container__main-game--content__game {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.container__main-game--content-player1 {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .2);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.container__main-game--content-player2 {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .2);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.container__game--grid {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    background: url('../Images/card2.jpeg');
+    background-size: cover;
+    padding: 30px;
+    margin: 10px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.container__game--grid:hover {
+    transform: rotateY(180deg);
+}
+
+.container__game--grid-sub-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    background-color: blue;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.btn-turn {
+    background-color: var(--base-color-lightgreen);
+    margin-top: 0.8rem;
+}
+
