@@ -54,6 +54,14 @@
     background-color: var(--base-color-lightgreen);
     margin-top: 0.8rem;
 }
+
+@media screen and (max-width: 1188px) {
+    .container__main-game--content__game {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto auto auto;
+        background-color: rgba(255, 255, 255, .3);
+    }
+}
 /** 
     PIP-CARD styles
 */

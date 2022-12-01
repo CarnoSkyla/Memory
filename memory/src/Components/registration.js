@@ -59,7 +59,7 @@ const RegistrationScreen = () => {
 
                 </div>
                 <div className='container__navigation--heading-wrapper'>
-                    <h1>Memory</h1>
+                    <h2>Memory</h2>
                 </div>
                 <div className='container__navigation--exit-btn-wrapper'>
                     <button className='btn exit-btn'>Exit Game</button>

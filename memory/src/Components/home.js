@@ -116,7 +116,7 @@ const HomeScreen = () => {
 
                 </div>
                 <div className='container__navigation--heading-wrapper'>
-                    <h1>Memory</h1>
+                    <h2>Memory</h2>
                 </div>
                 <div className='container__navigation--exit-btn-wrapper'>
                     <button className='btn restart-btn' onClick={resetGame}>Restart Game</button>
