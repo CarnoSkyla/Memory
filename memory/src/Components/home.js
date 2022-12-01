@@ -17,7 +17,7 @@ const HomeScreen = () => {
     const [playerTurn, setPlayerTurn] = useState("player1");
     const [matched, setMatched] = useState(false);
     const [gameStarted, setGameStarted] = useState(false);
-    const [restart, setRestart] = useState(false)
+    const [usedCards, setUsedCards] = useState([])  
 
     useEffect(() => {
         if (!gameStarted) {
@@ -26,8 +26,16 @@ const HomeScreen = () => {
             for (let i = 0; i < classname.length; i++) {
                 classname[i].style.transform = "scale(1)"
             }
+            if (usedCards.length > 0) {
+                for (let i = 0; i < usedCards.length; i++) {
+                    
+                    let remove = document.getElementById(usedCards[i].id)
+                    remove.style = 'opacity: 1'
+                    setPlayerTurn("player1")
+                }
+            }
         }
-    }, [gameStarted])
+    }, [gameStarted, playerTurn])
 
     const changePlayerTurn = (turn) => {
         if (turn === "player1" && !matched) {
@@ -58,24 +66,30 @@ const HomeScreen = () => {
             let secondCardColor = turns[1].cardId.split("-")[1]
             let secondCardnumber = turns[1].cardId.split("-")[2]
 
+            let card1 = document.getElementById(turns[0].cardId)
+            let card2 = document.getElementById(turns[1].cardId)
+
+            let game = document.getElementById('memory-game')
+
             if (firstCardColor === secondCardColor && firstCardnumber === secondCardnumber) {
                 alert('Match')
                 console.log(playerTurn)
                 dispatch(changeScore({ player: playerTurn }))
-                let card1 = document.getElementById(turns[0].cardId)
-                let card2 = document.getElementById(turns[1].cardId)
 
                 setMatched(true)
 
-                card1.style = "display: none"
-                card2.style = "display: none"
+                card1.style = "opacity: 0"
+                card2.style = "opacity: 0"
+                setUsedCards([card1, card2])
                 dispatch(resetState());
 
             } else {
                 setMatched(false)
-                alert('No match')
                 dispatch(resetState())
                 changePlayerTurn(playerTurn)
+                alert('No Match')
+                card1.style = 'transform: 0'
+                card2.style = 'transform: 0'
             }
         }
 
@@ -112,7 +126,7 @@ const HomeScreen = () => {
                         <button className="btn btn-turn">Its Your Turn</button>
                     }
                 </div>
-                <div className='container__main-game--content__game'>
+                <div className='container__main-game--content__game' id="memory-game">
                     <div className="container__game">
                         <div className="container__game--grid" id="pip-black-2" onClick={(e) => revealCard(e.target.id)}>
                             <div className="container__game--grid-sub-back" id="sub-pip-card-1">
