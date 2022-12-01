@@ -2,18 +2,19 @@ import React from 'react';
 
 const initialState = {
     score: [{player1: 0, player2: 0}],
-    player: 1,
-    count: 2
+    count: 2,
+    turns: [],
+    card: null,
+    success: false
 }
 
 const ScoreReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CHANGE_SCORE':
 
-            if (action.payload.player === Object.keys(state.score[0])[0]) {
+            if (action.payload.player === Object.keys(state.score[0])[0] || action.payload.player === Object.keys(state.score[0])[1]) {
                 
-                state.score[0][action.payload.player] = state.count
-                
+                state.score[0][action.payload.player] = state.count++
                 return {
                     ...state
                 }
@@ -21,18 +22,25 @@ const ScoreReducer = (state = initialState, action) => {
             return {
                 ...state
             };
-        case 'CHANGE_PLAYER': {
+        case 'CHANGE_TURNS':
+           state.turns.push(action.payload)
+            
+           return state;
+        
+        case 'RESET_STATE':
             return {
                 ...state,
-                player: action.payload === 1 ? 1 : 2
+                turns: [],
+                success: true
             }
-        }
+
         case 'RESET_SCORE':
-            console.log('game set');
             return {
                 ...state,
                 score: [{player1: 0, player2: 0}],
-                player: 1
+                turns: [],
+                player: 1,
+                count: 2
             };
         default:
             return state;

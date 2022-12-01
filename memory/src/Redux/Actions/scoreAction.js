@@ -1,7 +1,9 @@
 export const actions = {
     CHANGE_SCORE: 'CHANGE_SCORE',
     RESET_SCORE: 'RESET_SCORE',
-    CHANGE_PLAYER: 'CHANGE_PLAYER'
+    CHANGE_PLAYER: 'CHANGE_PLAYER',
+    CHANGE_TURNS: 'CHANGE_TURNS',
+    RESET_STATE: 'RESET_STATE'
 }
 
 export const changeScore = state => ({
@@ -16,4 +18,13 @@ export const resetScore = () => ({
 export const changePlayer = player => ({
     type: actions.CHANGE_PLAYER,
     payload: player
+})
+
+export const changeTurns = turn => ({
+    type: actions.CHANGE_TURNS,
+    payload: turn
+})
+
+export const resetState = () => ({
+    type: actions.RESET_STATE
 })
