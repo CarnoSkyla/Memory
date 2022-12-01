@@ -15,7 +15,11 @@ const PlayerReducer = (state = initialState, action) => {
                 success: true
             }
         case 'DELETE_PLAYER':
-            return state
+            return {
+                ...state,
+                players: [],
+                success: false
+            }
         default:
             return state;
     }

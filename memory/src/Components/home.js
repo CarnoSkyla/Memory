@@ -4,6 +4,8 @@ import { useSelector, connect, useDispatch } from 'react-redux'
 import Astro1 from '../Images/astro1.png'
 import Astro2 from '../Images/astro2.png'
 import { changeScore, changeTurns, resetScore, resetState } from '../Redux/Actions/scoreAction'
+import { deletePlayer } from '../Redux/Actions/userAction'
+import { useNavigate} from 'react-router-dom'
 
 import '../Stylesheets/home.css'
 
@@ -13,6 +15,7 @@ const HomeScreen = () => {
     let { score, success, turns } = useSelector((state) => state.score);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [playerTurn, setPlayerTurn] = useState("player1");
     const [matched, setMatched] = useState(false);
@@ -93,13 +96,17 @@ const HomeScreen = () => {
             }
         }
 
-        console.log(turns)
-
     }
 
     const resetGame = () => {
         dispatch(resetScore())
         setGameStarted(false)
+    }
+
+    const exitGame = () => {
+        resetGame()
+        dispatch(deletePlayer())
+        navigate('/')
     }
 
     return (
@@ -113,7 +120,7 @@ const HomeScreen = () => {
                 </div>
                 <div className='container__navigation--exit-btn-wrapper'>
                     <button className='btn restart-btn' onClick={resetGame}>Restart Game</button>
-                    <button className='btn exit-btn'>Exit Game</button>
+                    <button className='btn exit-btn' onClick={exitGame}>Exit Game</button>
                 </div>
             </div>
             <div className="container__main-game--content">
