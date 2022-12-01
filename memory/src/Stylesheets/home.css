@@ -29,10 +29,11 @@
     position: relative;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    background: url('../Images/card2.jpeg');
-    background-size: cover;
+    background: url('../Images/backcard.png');
     padding: 30px;
     margin: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
@@ -45,8 +46,6 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    background: url('../Images//ace\(diamond\).jpeg');
-    background-size: cover;
     color: black;
     transform: rotateY(180deg);
 }
@@ -55,4 +54,294 @@
     background-color: var(--base-color-lightgreen);
     margin-top: 0.8rem;
 }
+/** 
+    PIP-CARD styles
+*/
+#sub-pip-card-1 {
+    background: url('../Images/pip/2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-2 {
+    background: url('../Images/pip/3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-3 {
+    background: url('../Images/pip/4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-4 {
+    background: url('../Images/pip/5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-5 {
+    background: url('../Images/pip/6.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-6 {
+    background: url('../Images/pip/7.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-7 {
+    background: url('../Images/pip/8.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-8 {
+    background: url('../Images/pip/9.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-9 {
+    background: url('../Images/pip/10.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-10 {
+    background: url('../Images/pip/J\ \(2\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-11 {
+    background: url('../Images/pip/K\ \(2\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-12 {
+    background: url('../Images/pip/Q.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-pip-card-13 {
+    background: url('../Images/pip/A\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+
+/**
+    HEART-CARD Styles
+ */
+
+ #sub-heart-card-1 {
+    background: url('../Images/hearts/2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-2 {
+    background: url('../Images/hearts/3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-3 {
+    background: url('../Images/hearts/4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-4 {
+    background: url('../Images/hearts/5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-5 {
+    background: url('../Images/hearts/6.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-6 {
+    background: url('../Images/hearts/7.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-7 {
+    background: url('../Images/hearts/8.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-8 {
+    background: url('../Images/hearts/9.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-9 {
+    background: url('../Images/hearts/10.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-10 {
+    background: url('../Images/hearts/J.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-11 {
+    background: url('../Images/hearts/K.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-12 {
+    background: url('../Images/hearts/Q.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+ #sub-heart-card-13 {
+    background: url('../Images/hearts/A\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+ }
+
+ /** 
+    DIAMOND-CARD Styles
+ */
+#sub-diamond-card-1 {
+    background: url('../Images/diamonds/2\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-2 {
+    background: url('../Images/diamonds/3\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-3 {
+    background: url('../Images/diamonds/4\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-4 {
+    background: url('../Images/diamonds/5\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-5 {
+    background: url('../Images/diamonds/6\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-6 {
+    background: url('../Images/diamonds/7\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-7 {
+    background: url('../Images/diamonds/8\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-8 {
+    background: url('../Images/diamonds/9\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-9 {
+    background: url('../Images/diamonds/10\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-10 {
+    background: url('../Images/diamonds/J\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-11 {
+    background: url('../Images/diamonds/K\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-12 {
+    background: url('../Images/diamonds/Q\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-diamond-card-13 {
+    background: url('../Images/diamonds/A\ \(2\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/** 
+    SPADE-CARD Styles
+*/
+#sub-spade-card-1 {
+    background: url('../Images/spades/2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-2 {
+    background: url('../Images/spades/3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-3 {
+    background: url('../Images/spades/4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-4 {
+    background: url('../Images/spades/5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-5 {
+    background: url('../Images/spades/6.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-6 {
+    background: url('../Images/spades/7.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-7 {
+    background: url('../Images/spades/8.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-8 {
+    background: url('../Images/spades/9.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-9 {
+    background: url('../Images/spades/10.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-10 {
+    background: url('../Images/spades/J.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-11 {
+    background: url('../Images/spades/K.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-12 {
+    background: url('../Images/spades/Q.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-spade-card-13 {
+    background: url('../Images/spades/A\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/** 
+    JOKER Styles
+*/
+#sub-joker-card-black {
+    background: url('../Images/jokers/Joker_1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sub-joker-card-red {
+    background: url('../Images/jokers/Joker_2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
