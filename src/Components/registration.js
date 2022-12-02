@@ -4,7 +4,7 @@ import '../Stylesheets/registration.css'
 import Astro1 from '../Images/astro1.png'
 import Astro2 from '../Images/astro2.png'
 import { addPlayer } from '../Redux/Actions/userAction';
-import { Link, useNavigate} from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom'; 
 
 const RegistrationScreen = () => {
     let navigate = useNavigate();
@@ -13,7 +13,6 @@ const RegistrationScreen = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(players, success);
         if (success && signedIn) {
             if (players.length > 0) {
                 alert(players[0].player1 + ' VS ' + players[0].player2)
@@ -22,7 +21,7 @@ const RegistrationScreen = () => {
                 navigate('/Home')
             }, 1500); 
         }
-    }, [signedIn, players])
+    }, [signedIn, players, success, navigate])
 
     const getUserValues = () => {
         const player1 = document.getElementById('player-1').value;

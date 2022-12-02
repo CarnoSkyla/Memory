@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector, connect, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import Astro1 from '../Images/astro1.png'
 import Astro2 from '../Images/astro2.png'
@@ -12,7 +12,7 @@ import '../Stylesheets/home.css'
 const HomeScreen = () => {
 
     let { players } = useSelector((state) => state.user);
-    let { score, success, turns } = useSelector((state) => state.score);
+    let { score, turns } = useSelector((state) => state.score);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ const HomeScreen = () => {
                 }
             }
         }
-    }, [gameStarted, playerTurn])
+    }, [gameStarted, playerTurn, usedCards])
 
     const changePlayerTurn = (turn) => {
         if (turn === "player1" && !matched) {
@@ -56,11 +56,10 @@ const HomeScreen = () => {
         card.style = 'transform: rotateY(180deg)'
 
         dispatch(changeTurns({ turn: count++, cardId: cardId }))
-        changePlayer(cardId, count)
+        changePlayer()
     }
 
-    const changePlayer = (cardId, turn) => {
-        const card = document.getElementById(cardId)
+    const changePlayer = () => {
 
         if (turns.length === 2) {
             let firstCardColor = turns[0].cardId.split("-")[1]
@@ -71,8 +70,6 @@ const HomeScreen = () => {
 
             let card1 = document.getElementById(turns[0].cardId)
             let card2 = document.getElementById(turns[1].cardId)
-
-            let game = document.getElementById('memory-game')
 
             if (firstCardColor === secondCardColor && firstCardnumber === secondCardnumber) {
                 alert('Match')
@@ -125,7 +122,7 @@ const HomeScreen = () => {
             </div>
             <div className="container__main-game--content">
                 <div className="container__main-game--content-player1">
-                    <img src={Astro1} />
+                    <img src={Astro1} alt="Astronout"/>
                     <h3>{players[0].player1}</h3>
                     <p>Score: {score[0].player1}</p>
                     {
@@ -426,7 +423,7 @@ const HomeScreen = () => {
                     </div>
                 </div>
                 <div className="container__main-game--content-player1">
-                    <img src={Astro2} />
+                    <img src={Astro2}  alt="Astronout"/>
                     <h3>{players[0].player2}</h3>
                     <p>Score: {score[0].player2}</p>
                     {

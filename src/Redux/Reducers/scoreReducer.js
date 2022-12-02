@@ -1,4 +1,3 @@
-import React from 'react';
 
 const initialState = {
     score: [{player1: 0, player2: 0}],

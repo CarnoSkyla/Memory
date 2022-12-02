@@ -8,7 +8,6 @@ import Registration from './Components/registration';
 import HomeScreen from './Components/home';
 import WinnerScreen from './Components/winner';
 import store from './Redux/store';
-import { setStore } from './Redux/Reducers/storeRegistry';
 
 function App() {
   return (
