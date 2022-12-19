@@ -15,7 +15,8 @@ const ScoreReducer = (state = initialState, action) => {
                 
                 state.score[0][action.payload.player] = state.count++
                 return {
-                    ...state
+                    ...state,
+                    
                 }
             }
             return {
