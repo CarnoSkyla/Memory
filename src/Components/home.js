@@ -13,9 +13,6 @@ const HomeScreen = () => {
 
     let { players } = useSelector((state) => state.user);
     let { score, turns } = useSelector((state) => state.score);
-
-    let cardsUsed = [];
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -31,7 +28,7 @@ const HomeScreen = () => {
             for (let i = 0; i < classname.length; i++) {
                 classname[i].style.transform = "scale(1)"
             }
-            console.log(cardsUsed, 'cards Used')
+
             if (usedCards.length > 0) {
                 for (let i = 0; i < usedCards.length; i++) {
                     
@@ -42,7 +39,7 @@ const HomeScreen = () => {
                 }
             }
         }
-    }, [gameStarted, playerTurn, usedCards, cardsUsed])
+    }, [gameStarted, playerTurn, usedCards])
 
     const changePlayerTurn = (turn) => {
         if (turn === "player1" && !matched) {
@@ -77,15 +74,13 @@ const HomeScreen = () => {
 
             if (firstCardColor === secondCardColor && firstCardnumber === secondCardnumber) {
                 alert('Match')
-                console.log(playerTurn)
                 dispatch(changeScore({ player: playerTurn }))
 
                 setMatched(true)
 
                 card1.style = "opacity: 0; pointer-events: none"
                 card2.style = "opacity: 0; pointer-events: none"
-                cardsUsed.push(card1, card2)
-                console.log(cardsUsed)
+                setUsedCards([card1, card2])
                 dispatch(resetState());
 
             } else {
